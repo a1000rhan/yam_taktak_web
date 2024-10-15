@@ -1,8 +1,9 @@
 {
   "name": "yam_taktak_web",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "homepage": "https://a1000rhan.github.io/yam_taktak_web",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
