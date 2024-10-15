@@ -1,0 +1,36 @@
+.bottom-bar {
+  margin-top: 24px;
+  height: 136px;
+  background-color: #6b7280;
+  display: flex;
+  justify-content: space-between;
+}
+.logos {
+  display: flex;
+  align-items: center;
+  margin: 0 80px;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+}
+.social-media {
+  padding: 16px;
+  display: flex;
+  margin: 0 80px;
+}
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 10px;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tiktock {
+  width: 24px;
+  height: 24px;
+}

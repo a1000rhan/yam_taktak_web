@@ -1,0 +1,345 @@
+@import "../App.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.about-page {
+  background-color: #f9f9f9;
+  /* scrollable */
+  overflow-y: auto;
+}
+.hero-section {
+  text-align: center;
+  height: 60vh;
+  background-color: var(--color-primary);
+  -webkit-clip-path: ellipse(90% 45% at 50% 35%);
+  clip-path: ellipse(90% 60% at 50% 35%);
+}
+
+.logo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.logo-img {
+  width: 160px;
+  height: 160px;
+}
+.hero-title {
+  font-size: 20px;
+  line-height: 1.75rem;
+
+  font-family: "Cairo-Bold";
+  color: var(--header-text-color);
+}
+.hero-description {
+  font-size: 1.5rem;
+  color: var(--header-text-color);
+}
+.btn-hero-section {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 13rem;
+  width: 100%;
+
+  white-space: nowrap;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+}
+.btn {
+  border-radius: 9999px;
+}
+.btn-primary {
+  background-color: rgb(27 95 251 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 1;
+  cursor: pointer;
+  width: 200px;
+  padding: 16px 24px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(169 0 0 / var(--tw-bg-opacity));
+  color: var(--header-text-color);
+  font-weight: 700;
+  width: 200px;
+  padding: 16px 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  border: none;
+  background-color: white;
+}
+.btn-tenty {
+  background-color: var(--header-text-color);
+  color: var(--primary-txt-color);
+  font-weight: 700;
+  padding: 16px 24px;
+  width: 200px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-tenty:hover {
+  background-color: var(--primary-txt-color);
+  color: var(--header-text-color);
+  border: none;
+}
+.btn-text {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Cairo-Bold";
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-row {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-center*/
+
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
+}
+.about-section {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.about-container {
+  content: "";
+  display: table;
+  clear: both;
+  padding: 1rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.about-sec-container {
+  content: "";
+  display: table;
+  clear: both;
+  padding: 1rem;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.text-section {
+  float: right;
+  width: 50%;
+  padding: 1rem;
+  text-align: start;
+  margin-top: 120px;
+}
+.text-full-section {
+  float: right;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-title {
+  font-size: 60px;
+  font-family: "Cairo-Bold";
+}
+.about-description {
+  font-size: 1.5rem;
+  font-family: "Cairo-Regular";
+  margin: 36px 0px 0px;
+}
+.game-look {
+  float: left;
+  width: 500px;
+  height: 500px;
+}
+
+.row-circles {
+  display: flex;
+  margin-top: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: var(--primary-txt-color) 4px solid;
+  display: flex;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+
+  color: var(--header-text-color);
+}
+.line {
+  width: 80px;
+  height: 4px;
+  margin: 0px;
+  background-color: var(--primary-txt-color);
+}
+.circle-text {
+  font-size: 1.5rem;
+  font-family: "Cairo-Bold";
+  color: black;
+  margin: auto;
+  text-align: center;
+}
+
+.avatar {
+  width: 500px;
+  height: 600px;
+}
+.btn-padding {
+  margin-top: 16px;
+}
+
+.about-description-third {
+  font-size: 1.5rem;
+  padding: 1rem;
+
+  font-family: "Cairo-Regular";
+  white-space: nowrap;
+  border-radius: 9999px;
+  margin: 36px 100px 0px;
+  border: none;
+
+  color: var(--header-text-color);
+  background-color: #959595;
+}
+.about-products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.about-product {
+  margin-top: 48px;
+  width: 230px;
+  height: 400px;
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.prod-img {
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+}
+.prod-text-container {
+  padding: 1rem;
+}
+.prod-text {
+  font-size: 24px;
+  font-family: "Cairo-Regular";
+}
+.btn-prod {
+  background-color: var(--card-bg-area-color);
+  color: var(--header-text-color);
+  font-weight: 700;
+  font-size: 24px;
+  padding: 8px 20px;
+  font-family: "Cairo-Regular";
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+.prod-price {
+  font-size: 36px;
+  font-family: "Cairo-Regular";
+  font-weight: bold;
+}
+.buy-prod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.kd {
+  font-size: 24px;
+}
+.help-section {
+  /*center all the contents*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.help-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.help-container {
+  margin-top: 48px;
+  width: 370px;
+  height: 650px;
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 24px;
+  gap: 1rem;
+}
+
+.help-text {
+  font-size: 60px;
+  font-family: "Cairo-Regular";
+  text-align: center;
+}
+.help-title {
+  font-size: 30px;
+  font-family: "Cairo-Bold";
+  text-align: center;
+}
+.help-description {
+  font-size: 20px;
+  font-family: "Cairo-Regular";
+  text-align: center;
+}
+.help-img {
+  width: 200px;
+  height: 200px;
+}
+.btn-help {
+  width: 100%;
+  height: 80px;
+  font-size: 20px;
+  padding: 12px 40px 16px;
+  background-color: #332e43;
+  margin: 24px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  font-family: Arabic-book, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue,
+    sans-serif;
+}

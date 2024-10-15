@@ -1,0 +1,72 @@
+.btn {
+  border-radius: 9999px;
+}
+.btn-primary {
+  background-color: rgb(27 95 251 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 1;
+  cursor: pointer;
+  width: 200px;
+  padding: 16px 24px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(169 0 0 / var(--tw-bg-opacity));
+  color: var(--header-text-color);
+  font-weight: 700;
+  width: 200px;
+  padding: 16px 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  border: none;
+  background-color: white;
+}
+.btn-tenty {
+  background-color: var(--header-text-color);
+  color: var(--primary-txt-color);
+  font-weight: 700;
+  padding: 16px 24px;
+  width: 200px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-tenty:hover {
+  background-color: var(--primary-txt-color);
+  color: var(--header-text-color);
+  border: none;
+}
+.btn-prod {
+  background-color: var(--card-bg-area-color);
+  color: var(--header-text-color);
+  font-weight: 700;
+  font-size: 24px;
+  padding: 8px 20px;
+  font-family: "Cairo-Regular";
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-hero-section {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 13rem;
+  width: 100%;
+
+  white-space: nowrap;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+}
+
+.btn-text {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Cairo-Bold";
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

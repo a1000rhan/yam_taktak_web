@@ -1,0 +1,75 @@
+@import "../App.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 64px;
+  width: 70%;
+  height: 70vh;
+  margin-bottom: 64px;
+
+  border-radius: 16px;
+  /*add shadow*/
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  width: 64px;
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+  margin: 16px;
+}
+.text-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+}
+.text-field {
+  width: 40%;
+  height: 64px;
+  padding: 10px;
+  margin: 10px 0;
+
+  border-radius: 26px;
+  color: black;
+
+  border: 1px solid #ccc;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+.login-actions {
+  width: 40%;
+}
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  font-size: 24px;
+  background-color: var(--);
+}
+.other-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.btn-others {
+  border-radius: 8px;
+  background-color: transparent;
+  border: none;
+  justify-content: space-between;
+  display: flex;
+  font-size: 24px;
+
+  color: black;
+  cursor: pointer;
+}

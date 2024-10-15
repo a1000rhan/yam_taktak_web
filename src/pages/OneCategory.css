@@ -1,0 +1,77 @@
+@import url("../App.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.category {
+  background-color: #e6e6e6;
+  border-radius: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 164px;
+  height: 200px;
+  border-radius: 16px;
+  position: relative;
+  margin: 42px 0px 42px 0px;
+}
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  background-size: cover;
+
+  border-radius: 16px 16px 0 0;
+  display: block;
+  position: relative;
+}
+.category-name {
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  font-family: "Cairo-Bold";
+  z-index: 3;
+  border-radius: 0px 0px 16px 16px;
+  padding: 16px 0px 8px 0px;
+  object-fit: cover;
+  text-align: center;
+  justify-self: center;
+  background-color: var(--card-bg-area-color);
+  color: #e6e6e6;
+}
+
+.info-icon {
+  position: absolute;
+  top: -24px;
+  left: -10px;
+  width: 32px;
+  height: 32px;
+  background-color: #3093e8;
+  color: white;
+  padding: 5px;
+  display: flex;
+  font-size: 20px;
+  z-index: 8;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.remaining-games {
+  background-color: var(--card-bg-area-color);
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  rotate: -3deg;
+  right: -1px;
+  top: -54px;
+  border-right: 8px solid var(--primary-txt-color);
+  border-bottom: 8px solid var(--primary-txt-color);
+  position: absolute;
+  z-index: 7;
+}
