@@ -50,7 +50,7 @@
     "react-transition-group": "^4.4.5",
     "sassy-datepicker": "^0.10.2",
     "styled-components": "^6.1.13",
-    "sweetalert2": "^11.14.0"
+    "sweetalert2": "^11.6.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",

@@ -10,7 +10,6 @@ import prod4 from "../assets/prod4.png";
 import phone from "../assets/phone.svg";
 import two from "../assets/two.svg";
 import arrows from "../assets/arrows.svg";
-import products from "../../products.json";
 import "./About.css";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
