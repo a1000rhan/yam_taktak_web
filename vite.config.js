@@ -8,6 +8,9 @@ export default defineConfig({
   server: {
     port: 8080,
   },
-
+  build: {
+    outDir: "./build",
+    emptyOutDir: true, // also necessary
+  },
   plugins: [react(), splitVendorChunkPlugin()],
 });
