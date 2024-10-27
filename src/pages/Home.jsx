@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import logo from "../assets/logo.svg";
 import authAPI from "../api/Auth";
+import gameAPI from "../api/Game";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
@@ -36,6 +37,10 @@ function Home() {
     setIsLoading(true);
     authAPI.signIn(user, Swal, navigate, setIsLoading);
   };
+  const handleGetList = (e) => {
+    e.preventDefault();
+    gameAPI.fetchGames();
+  };
 
   return (
     <div>
@@ -68,6 +73,12 @@ function Home() {
               className="btn-login orange-gradient"
             >
               {isLoading ? <CircularProgress /> : "تسجيل الدخول"}
+            </button>
+            <button
+              onClick={handleGetList}
+              className="btn-login orange-gradient"
+            >
+              {isLoading ? <CircularProgress /> : "getGames"}
             </button>
           </div>
         </form>
