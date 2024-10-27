@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "image": "prod1.png",
+            "description": "باقة تتيح لك إنشاء لعبة واحدة",
+            "price": 2.5
+        },
+        {
+            "id": 2,
+            "image": "prod2.png",
+            "description": "باقة تتيح لك إنشاء لعبتين",
+            "price": 4.5
+        },
+        {
+            "id": 3,
+            "image": "prod3.png",
+            "description": "باقة تتيح لك إنشاء 5 ألعاب",
+            "price": 10
+        },
+        {
+            "id": 4,
+            "image": "prod4.png",
+            "description": "باقة تتيح لك إنشاء 10 ألعاب",
+            "price": 19
+        }
+    ]
+}

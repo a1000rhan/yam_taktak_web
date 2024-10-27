@@ -7,6 +7,7 @@ import prod1 from "../assets/prod1.png";
 import prod2 from "../assets/prod2.png";
 import prod3 from "../assets/prod3.png";
 import prod4 from "../assets/prod4.png";
+import products from "../../products.json";
 import phone from "../assets/phone.svg";
 import two from "../assets/two.svg";
 import arrows from "../assets/arrows.svg";
