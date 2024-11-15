@@ -21,16 +21,29 @@ class CategoryAPI {
       console.log("🚀 ~ CategoryAPI ~ getCategories= ~ error:", error);
     }
   };
-  addCategory = async (category) => {
+  addCategory = async (category, Swal, navigate, setIsLoading) => {
     try {
+      this.loading = true;
       const formData = new FormData();
       for (const key in category) formData.append(key, category[key]);
-      this.loading = true;
       await API.post("/category/create", formData);
+      navigate("/select-categories");
+
+      Swal.fire("Good job!", "You clicked the button!", "success");
+
+      console.log("🚀 ~ CategoryAPI ~ addCategory= ~ formData:", formData);
+      setIsLoading(false);
       this.loading = false;
       this.getCategories();
     } catch (error) {
       console.log("🚀 ~ CategoryAPI ~ addCategory= ~ error:", error);
+      setIsLoading(false);
+
+      Swal.fire(
+        "You have Entered wrong info!",
+        "You clicked the button!",
+        "error"
+      );
     }
   };
 }

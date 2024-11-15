@@ -8,7 +8,7 @@ const OneCategory = ({ category, reachMax }) => {
       <img className="info-icon" src={info} />
       {/* <div className="remaining-games">باقي {category.playCount} لعبة</div> */}
 
-      <img src={category.image} alt="name" className="category-image" />
+      <img src={category.categoryImage} alt="name" className="category-image" />
 
       <div className="category-name">{category.categoryName}</div>
     </div>

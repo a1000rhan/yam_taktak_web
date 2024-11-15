@@ -11,6 +11,8 @@ import MuiCard from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
 import { Light } from "@mui/icons-material";
 import categoryAPI from "../api/Category";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -33,9 +35,11 @@ const Card = styled(MuiCard)(({ theme }) => ({
 
 export default function AddCategory(props) {
   const [previewImage, setPreviewImage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   const [category, setCategory] = useState({
-    categoryName: null,
-    categoryImage: null,
+    categoryName: "",
+    categoryImage: "",
   });
 
   const handleChange = (e) => {
@@ -54,14 +58,14 @@ export default function AddCategory(props) {
     };
     reader.readAsDataURL(event.target.files[0]);
     setCategory({ ...category, categoryImage: event.target.files[0] });
+    console.log("🚀 ~ handleImage ~ category:", category);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     console.log("🚀 ~ handleSubmit ~ question:", category);
 
-    await categoryAPI.addCategory(category);
+    await categoryAPI.addCategory(category, Swal, navigate, setIsLoading);
     // await categoryAPI.addCategory(category);
   };
   return (
