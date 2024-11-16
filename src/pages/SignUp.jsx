@@ -4,9 +4,11 @@ import logo from "../assets/logo.svg";
 import authAPI from "../api/Auth";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { DatePicker } from "@julienvanbeveren/react-datetime-picker";
-import { set } from "date-fns";
-
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import dayjs, { Dayjs } from "dayjs";
+import { Skeleton } from "@mui/material";
 function SignUp() {
   const [user, setUser] = useState({
     username: "",
@@ -18,8 +20,7 @@ function SignUp() {
     dateOfBirth: "",
     type: "admin",
   });
-  const [date, setDate] = useState(new Date());
-
+  const [startDate, setStartDate] = useState(dayjs());
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -29,16 +30,29 @@ function SignUp() {
       [e.target.name]: e.target.value,
     });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setUser({ ...user, dateOfBirth: date });
-    console.log("🚀 ~ handleSubmit ~ user:", user);
-    setIsLoading(true);
-    authAPI.signUp(user, Swal, navigate, setIsLoading);
+  const handleDateChange = (date) => {
+    setUser({
+      ...user,
+      dateOfBirth: date.format("YYYY-MM-DD"),
+    });
+    setStartDate(date);
   };
 
-  return (
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log("🚀 ~ handleSubmit ~ user:", user);
+    setIsLoading(true);
+    await authAPI.signUp(user, Swal, navigate, setIsLoading);
+  };
+
+  return isLoading ? (
+    <>
+      <div className="container">
+        <Skeleton variant="rect" width={210} height={118} />
+      </div>
+    </>
+  ) : (
     <div>
       <div className="container">
         <form className="text-form" onSubmit={handleSubmit}>
@@ -65,13 +79,15 @@ function SignUp() {
             onChange={handleChange}
             placeholder="البريد الإلكتروني"
           />
-          <DatePicker
-            style={{ width: "100%" }}
-            defaultValue={date}
-            // className="date-picker"
-            submitOnChange={(e) => setDate(e)}
-            name="dateOfBirth"
-          />
+
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              defaultValue={dayjs(startDate)}
+              onChange={handleDateChange}
+              value={startDate}
+            />
+          </LocalizationProvider>
+
           <input
             className="text-field"
             type="text"
