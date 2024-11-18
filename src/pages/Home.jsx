@@ -74,12 +74,12 @@ function Home() {
             >
               {isLoading ? <CircularProgress /> : "تسجيل الدخول"}
             </button>
-            <button
+            {/*  <button
               onClick={handleGetList}
               className="btn-login orange-gradient"
             >
               {isLoading ? <CircularProgress /> : "getGames"}
-            </button>
+            </button>*/}
           </div>
         </form>
       </div>

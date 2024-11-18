@@ -4,7 +4,6 @@ import logo from "../assets/logo.svg";
 import authAPI from "../api/Auth";
 import Swal from "sweetalert2";
 import countryCode from "../assets/data/CountryCodes.json";
-import countryCodeArr from "../assets/data/CountryCodesArr.json";
 import { useNavigate } from "react-router-dom";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";

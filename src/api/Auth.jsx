@@ -1,5 +1,6 @@
 import { makeAutoObservable, configure } from "mobx";
-import decode from "jwt-decode";
+
+import { jwtDecode } from "jwt-decode";
 import API from "./API";
 
 configure({
@@ -16,7 +17,7 @@ class AuthAPI {
     // await AsyncStorage.setItem("myToken", token);
     await localStorage.setItem("myToken", token);
     API.defaults.headers.common.Authorization = `Bearer ${token}`;
-    this.user = decode(token);
+    this.user = jwtDecode(token);
   };
 
   checkForToken = async () => {
@@ -24,7 +25,7 @@ class AuthAPI {
     const token = localStorage.getItem("myToken");
 
     if (token) {
-      const decodedToken = decode(token);
+      const decodedToken = jwtDecode(token);
       if (Date.now() < decodedToken.exp) {
         this.setUser(token);
         this.loading = false;
