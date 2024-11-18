@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Nav.css";
 import logo from "../assets/logo.svg";
 import authAPI from "../api/Auth";
@@ -59,7 +59,7 @@ const Navbar = () => {
       <ul>
         <img src={logo} className="App-logo" alt="logo" />
 
-        <NavLink className="nav-title" to={"/"}>
+        <Link className="nav-title" to={"/"}>
           <li>
             <a
               className={active === "Home" ? "active" : ""}
@@ -68,8 +68,8 @@ const Navbar = () => {
               العب
             </a>
           </li>
-        </NavLink>
-        <NavLink className="nav-title" to={"/about"}>
+        </Link>
+        <Link className="nav-title" to={"/about"}>
           <li>
             <a
               className={active === "About" ? "active" : ""}
@@ -78,8 +78,8 @@ const Navbar = () => {
               قصتنا
             </a>
           </li>
-        </NavLink>
-        <NavLink className="nav-title" to={"/contact"}>
+        </Link>
+        <Link className="nav-title" to={"/contact"}>
           <li>
             <a
               className={active === "Contact" ? "active" : ""}
@@ -88,7 +88,7 @@ const Navbar = () => {
               تواصل معنا
             </a>
           </li>
-        </NavLink>
+        </Link>
       </ul>
       {isAdmin ? (
         <div className="leading">
