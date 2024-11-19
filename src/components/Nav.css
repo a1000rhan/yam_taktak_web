@@ -118,3 +118,80 @@ body {
   margin-right: 10px;
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 700px) {
+  .navbar {
+    height: 100px;
+    width: 100%;
+    align-items: center;
+  }
+  .navbar ul {
+    display: none;
+  }
+  .navbar ul li {
+    display: block;
+    margin: 10px 0;
+  }
+  .navbar ul li a {
+    display: block;
+    padding: 10px 0;
+  }
+  .navbar ul li a:hover {
+    background-color: #f0512a;
+    color: white;
+  }
+  .navbar ul li a.active {
+    background-color: #f0512a;
+    color: white;
+  }
+  .navbar ul li a {
+    padding: 0px 6px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    border-radius: 20px;
+    font-weight: bolder;
+    transition: all 0.3s ease;
+  }
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(169 0 0 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+  .nav-btn-primary {
+    background-color: #f0512a;
+    color: white;
+    margin-bottom: 24px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .bit-primary:hover {
+    background-color: #f0512a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.875rem;
+    font-family: "Cairo-Bold";
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .nav-btn-secondary {
+    background-color: transparent;
+    color: black;
+    margin-bottom: 24px;
+    border: none;
+
+    font-size: 0.875rem;
+    font-weight: 900;
+    text-decoration: none;
+    transition: all;
+  }
+}

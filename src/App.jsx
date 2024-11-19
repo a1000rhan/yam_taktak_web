@@ -37,26 +37,21 @@ function App() {
   }, []);
   return (
     <>
-      {orientation === "landscape-primary" ||
-      orientation === "landscape-secondary" ? (
-        <div className="bk">
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/select-categories" element={<SelectCategories />} />
-            <Route path="/sign-up" element={<SignUp />} />
-            <Route path="/new-game" element={<NewGame />} />
-            <Route path="/game-history" element={<GameHistory />} />
-            <Route path="/add-questions" element={<AddQuestions />} />
-            <Route path="/add-category" element={<AddCategory />} />
-          </Routes>
-          <BottomBar />
-        </div>
-      ) : (
-        <div>"Please rotate your phone to view in landscape"</div>
-      )}
+      <div className="bk">
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/select-categories" element={<SelectCategories />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/new-game" element={<NewGame />} />
+          <Route path="/game-history" element={<GameHistory />} />
+          <Route path="/add-questions" element={<AddQuestions />} />
+          <Route path="/add-category" element={<AddCategory />} />
+        </Routes>
+        <BottomBar />
+      </div>
     </>
   );
 }

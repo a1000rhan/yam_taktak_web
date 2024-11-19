@@ -1,6 +1,7 @@
 .bottom-bar {
   margin-top: 24px;
   height: 136px;
+  width: 100%;
   background-color: #6b7280;
   display: flex;
   justify-content: space-between;
@@ -33,4 +34,21 @@
 .tiktock {
   width: 24px;
   height: 24px;
+}
+
+@media screen and (max-width: 700px) {
+  .bottom-bar {
+    height: 200px;
+    width: 100%;
+    align-items: center;
+  }
+  .logos {
+    margin: 0 0;
+  }
+  .social-media {
+    margin: 0;
+  }
+  .btn-circle {
+    margin: 6px;
+  }
 }
