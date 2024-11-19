@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import dayjs, { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import {
   Skeleton,
   Select,
@@ -25,9 +25,9 @@ function SignUp() {
     password: "",
     firstName: "",
     lastName: "",
-    countryCode: "",
+    countryCode: "+965",
     phoneNumber: "",
-    dateOfBirth: "",
+    dateOfBirth: currentYear.format("YYYY-MM-DD"),
     type: "admin",
   });
 
@@ -68,12 +68,6 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setUser({
-      e,
-    });
-    // setStartDate(date);
-
-    console.log("🚀 ~ handleSubmit ~ user:", user);
     setIsLoading(true);
     await authAPI.signUp(user, Swal, navigate, setIsLoading);
   };

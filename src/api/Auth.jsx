@@ -63,7 +63,7 @@ class AuthAPI {
       Swal.fire({
         position: "top-center",
         icon: "error",
-        title: "Enter the right data",
+        title: `${error.message}!`,
         showConfirmButton: false,
         timer: 3000,
       });
@@ -82,11 +82,7 @@ class AuthAPI {
       console.log("🚀 ~ AuthAPI ~ signUp= ~ error:", error);
       setIsLoading(false);
 
-      Swal.fire(
-        "You have Entered wrong info!",
-        "You clicked the button!",
-        "error"
-      );
+      Swal.fire(`${error.message}!`, "You clicked the button!", "error");
     }
   };
 
