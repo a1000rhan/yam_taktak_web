@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
+import {
+  Box,
+  Button,
+  CssBaseline,
+  FormControl,
+  TextField,
+  Typography,
+  styled,
+} from "@mui/material";
 
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
 import MuiCard from "@mui/material/Card";
-import { styled } from "@mui/material/styles";
-import { Light } from "@mui/icons-material";
+
 import categoryAPI from "../api/Category";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";

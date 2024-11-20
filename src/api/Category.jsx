@@ -40,7 +40,7 @@ class CategoryAPI {
       setIsLoading(false);
 
       Swal.fire(
-        "You have Entered wrong info!",
+        `${error.response.data.message}`,
         "You clicked the button!",
         "error"
       );
