@@ -10,7 +10,6 @@ import Button from "../components/Button";
 import categoryAPI from "../api/Category";
 import { Card, Skeleton, Typography } from "@mui/material";
 import gameAPI from "../api/Game";
-import { set } from "date-fns";
 
 const SelectCategories = () => {
   const ref = useRef(null);
