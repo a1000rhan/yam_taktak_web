@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import authAPI from "../api/Auth";
 import { Link, useNavigate } from "react-router-dom";
+import { observer } from "mobx-react";
 import logo from "../assets/logo-white.svg";
 import "./SelectCategories.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
@@ -218,4 +219,4 @@ const SelectCategories = () => {
   }
 };
 
-export default SelectCategories;
+export default observer(SelectCategories);
