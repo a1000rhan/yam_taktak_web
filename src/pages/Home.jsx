@@ -5,6 +5,7 @@ import authAPI from "../api/Auth";
 import gameAPI from "../api/Game";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { observer } from "mobx-react";
 import { CircularProgress } from "@mui/material";
 function Home() {
   const navigate = useNavigate();
@@ -87,4 +88,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default observer(Home);
