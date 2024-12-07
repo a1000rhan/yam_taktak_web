@@ -14,6 +14,7 @@ import NewGame from "./pages/NewGame";
 import GameHistory from "./pages/GameHistory";
 import AddQuestions from "./pages/AddQuestions";
 import AddCategory from "./pages/AddCategory";
+import ShowAllQuestions from "./pages/ShowAllQuestions";
 
 function App() {
   const [orientation, setOrientation] = useState("");
@@ -49,6 +50,7 @@ function App() {
           <Route path="/game-history" element={<GameHistory />} />
           <Route path="/add-questions" element={<AddQuestions />} />
           <Route path="/add-category" element={<AddCategory />} />
+          <Route path="/all-questions" element={<ShowAllQuestions />} />
         </Routes>
         <BottomBar />
       </div>

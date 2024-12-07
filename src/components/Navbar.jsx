@@ -116,6 +116,9 @@ const Navbar = () => {
             <MenuItem onClick={() => navigate("/add-category")}>
               adding category
             </MenuItem>
+            <MenuItem onClick={() => navigate("/all-questions")}>
+              show all questions
+            </MenuItem>
           </Menu>
         </div>
       ) : (
