@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
 import MuiCard from "@mui/material/Card";
-import { styled } from "@mui/material/styles";
+
 import questionsAPI from "../api/Questions";
 import categoryAPI from "../api/Category";
-import { MenuItem, Select } from "@mui/material";
+import {
+  MenuItem,
+  Select,
+  styled,
+  Typography,
+  TextField,
+  FormControl,
+  CssBaseline,
+  Button,
+  Box,
+} from "@mui/material";
 import authAPI from "../api/Auth";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import { observer } from "mobx-react";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -33,8 +39,9 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
-export default function AddQuestions(props) {
+const AddQuestions = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
     getCategories();
   }, []);
@@ -53,6 +60,7 @@ export default function AddQuestions(props) {
     hint: null,
     options: null,
     questionImage: null,
+    answerImage: null,
   });
   const [options, setOptions] = useState("");
 
@@ -100,10 +108,10 @@ export default function AddQuestions(props) {
     setQuestion({
       ...question,
       profile: authAPI.user["_id"] ?? "",
-      game: "66f6b34b31e4766930727704",
       weight: 100,
     });
-    await questionsAPI.addQuestion(question);
+    setIsLoading(true);
+    await questionsAPI.addQuestion(question, Swal, navigate, setIsLoading);
   };
 
   const categories = categoryAPI.categories;
@@ -160,7 +168,7 @@ export default function AddQuestions(props) {
             </FormControl>
             <Select
               onChange={handleChange}
-              value={selectedCategory}
+              value={selectedCategory._id}
               className="drop"
               name="category"
               id="category"
@@ -197,4 +205,5 @@ export default function AddQuestions(props) {
       </>
     );
   }
-}
+};
+export default observer(AddQuestions);

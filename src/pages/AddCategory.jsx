@@ -34,7 +34,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
-export default function AddCategory(props) {
+const AddCategory = () => {
   const [previewImage, setPreviewImage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
@@ -114,4 +114,5 @@ export default function AddCategory(props) {
       </Card>
     </>
   );
-}
+};
+export default AddCategory;
