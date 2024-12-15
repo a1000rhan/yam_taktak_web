@@ -116,13 +116,17 @@ const AddQuestions = () => {
 
   const categories = categoryAPI.categories;
   const [selectedCategory, setSelectedCategory] = useState("");
-  const dropdown = categories.map((cat) => (
+  const categoryList = categories.map((cat) => (
     <MenuItem key={cat?._id ?? ""} value={cat?._id ?? ""}>
       {cat?.categoryName ?? ""}
       {/* <img width={24} height={24} src={cat?.image ?? ""} /> */}
     </MenuItem>
   ));
-
+  const dropdown = [
+    <MenuItem value={"100"}>{100}</MenuItem>,
+    <MenuItem value={"200"}>{200}</MenuItem>,
+    <MenuItem value={"300"}>{300}</MenuItem>,
+  ];
   if (isLoading) {
     return <div>loading...</div>;
   } else {
@@ -154,7 +158,17 @@ const AddQuestions = () => {
 
               <TextField placeholder="الإجابة:" name="answer" />
 
-              <TextField placeholder="الدرجة:" name="weight" type="number" />
+              {/* <TextField placeholder="الدرجة:" name="weight" type="number" /> */}
+              <Select
+                onChange={handleChange}
+                value={selectedCategory._id}
+                className="drop"
+                name="weight"
+                label="الدرجة:"
+                id={selectedCategory._id}
+              >
+                {dropdown}
+              </Select>
 
               <TextField placeholder="مساعدة:" name="hint" />
             </FormControl>
@@ -173,7 +187,7 @@ const AddQuestions = () => {
               name="category"
               id="category"
             >
-              {dropdown}
+              {categoryList}
             </Select>
             <input type="file" onChange={handleQImage} />
             <input type="file" onChange={handleAImage} />
