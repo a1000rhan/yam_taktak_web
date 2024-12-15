@@ -13,9 +13,28 @@
   width: 100%;
   text-align: center;
   height: 70vh;
-  background-color: var(--color-primary);
-  -webkit-clip-path: ellipse(90% 45% at 50% 35%);
-  clip-path: ellipse(90% 60% at 50% 35%);
+
+  /* background-color: var(--color-primary); */
+  /* -webkit-clip-path: ellipse(90% 45% at 50% 35%);
+  clip-path: ellipse(90% 60% at 50% 35%); */
+}
+.red-circle {
+  position: absolute;
+  z-index: -1;
+  width: 25%;
+  margin: 0;
+  display: flex;
+  top: 10px;
+}
+.yellow-circle {
+  position: absolute;
+  z-index: -1;
+  width: 20%;
+  display: flex;
+  /* move it left */
+  left: 0;
+  /* move it down */
+  bottom: 20px;
 }
 .ex-lar-title {
   font-size: 2.5rem;

@@ -11,6 +11,8 @@ import products from "../../products.json";
 import phone from "../assets/phone.svg";
 import two from "../assets/two.svg";
 import arrows from "../assets/arrows.svg";
+import red from "../assets/red.svg";
+import yellow from "../assets/yello.svg";
 import "./About.css";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
@@ -38,6 +40,8 @@ const About = () => {
   return (
     <div className="about-page">
       <div className="hero-section orange-gradient ">
+        <img src={red} alt="red" className="red-circle" />
+        <img src={yellow} alt="yellow" className="yellow-circle" />
         <div className="logo-section">
           <img src={logo} className="logo-img" alt="logo" />
         </div>

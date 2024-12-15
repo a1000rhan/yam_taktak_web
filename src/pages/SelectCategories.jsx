@@ -3,6 +3,8 @@ import authAPI from "../api/Auth";
 import { Link, useNavigate } from "react-router-dom";
 import { observer } from "mobx-react";
 import logo from "../assets/logo-white.svg";
+import red from "../assets/red.svg";
+import yellow from "../assets/yello.svg";
 import "./SelectCategories.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import OneCategory from "./OneCategory";
@@ -150,6 +152,8 @@ const SelectCategories = () => {
       return (
         <div className="start-game">
           <div className="hero-section orange-gradient ">
+            <img src={red} alt="red" className="red-circle" />
+            <img src={yellow} alt="yellow" className="yellow-circle" />
             <h1 className="ex-lar-title">إنشاء لعبة</h1>
             <h2 className="hero-title">
               لعبة جماعية تفاعلية نختبر فيها معرفتكم و ثقافتكم
