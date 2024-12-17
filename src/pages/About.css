@@ -14,6 +14,46 @@
   -webkit-clip-path: ellipse(90% 45% at 50% 35%);
   clip-path: ellipse(90% 60% at 50% 35%);
 }
+.half-ring {
+  position: relative;
+  text-align: center;
+  padding: 30px;
+  width: 100%; /* Full width */
+
+  height: 75vh; /* Ring's outer radius (100px height + 200px thickness) */
+  background: #4b3393;
+  border-radius: 0px 0px 80px 80px; /* Top rounded corners */
+  overflow: hidden; /* Hide the bottom part */
+  rotate: 0deg;
+}
+
+.red-circle {
+  position: absolute;
+  z-index: -1;
+  width: 25%;
+  margin: 0;
+  display: flex;
+  top: 10px;
+}
+
+.yellow-circle {
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  display: flex;
+  overflow: hidden;
+  top: 200px;
+}
+.blue-circle {
+  position: absolute;
+  z-index: -1;
+  width: 20%;
+  display: flex;
+  /* move it left */
+  left: 0;
+  /* move it down */
+  bottom: 20px;
+}
 
 .logo-section {
   display: flex;

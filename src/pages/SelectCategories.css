@@ -18,6 +18,19 @@
   /* -webkit-clip-path: ellipse(90% 45% at 50% 35%);
   clip-path: ellipse(90% 60% at 50% 35%); */
 }
+.half-ring {
+  position: relative;
+  text-align: center;
+  padding: 30px;
+  width: 100%; /* Full width */
+
+  height: 75vh; /* Ring's outer radius (100px height + 200px thickness) */
+  background: #4b3393;
+  border-radius: 0px 0px 80px 80px; /* Top rounded corners */
+  overflow: hidden; /* Hide the bottom part */
+  rotate: 0deg;
+}
+
 .red-circle {
   position: absolute;
   z-index: -1;
@@ -26,7 +39,16 @@
   display: flex;
   top: 10px;
 }
+
 .yellow-circle {
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  display: flex;
+  overflow: hidden;
+  top: 200px;
+}
+.blue-circle {
   position: absolute;
   z-index: -1;
   width: 20%;
@@ -40,8 +62,22 @@
   font-size: 2.5rem;
   font-weight: 900;
   font-family: "Cairo-Bold";
-  margin-top: 64px;
+  margin-top: 164px;
   color: var(--header-text-color);
+}
+.top-logo {
+  display: flex;
+  position: absolute;
+  top: 140px;
+
+  right: 50%;
+  bottom: 0;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  background-color: transparent;
 }
 .logo-section {
   display: flex;
@@ -55,6 +91,7 @@
   height: 160px;
 }
 .hero-title {
+  margin-top: 20px;
   font-size: 20px;
   line-height: 1.75rem;
 

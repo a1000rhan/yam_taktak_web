@@ -2,9 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import authAPI from "../api/Auth";
 import { Link, useNavigate } from "react-router-dom";
 import { observer } from "mobx-react";
-import logo from "../assets/logo-white.svg";
+import wholeLogo from "../assets/whole-logo.png";
 import red from "../assets/red.svg";
 import yellow from "../assets/yello.svg";
+import blue from "../assets/blue.svg";
 import "./SelectCategories.css";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import OneCategory from "./OneCategory";
@@ -151,9 +152,12 @@ const SelectCategories = () => {
     else
       return (
         <div className="start-game">
-          <div className="hero-section orange-gradient ">
+          <div className="top-logo">
+            <img src={wholeLogo} alt="logo" />
+          </div>
+          <div className="half-ring orange-gradient">
             <img src={red} alt="red" className="red-circle" />
-            <img src={yellow} alt="yellow" className="yellow-circle" />
+            <img src={blue} alt="blue" className="blue-circle" />
             <h1 className="ex-lar-title">إنشاء لعبة</h1>
             <h2 className="hero-title">
               لعبة جماعية تفاعلية نختبر فيها معرفتكم و ثقافتكم
@@ -192,6 +196,9 @@ const SelectCategories = () => {
               </button>
             </div>
           </div>
+
+          <img src={yellow} alt="yellow" className="yellow-circle" />
+
           <div ref={ref} className="categories">
             {categories}
           </div>
