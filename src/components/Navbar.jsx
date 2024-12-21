@@ -91,7 +91,7 @@ const Navbar = () => {
         </Link>
       </ul>
       {isAdmin ? (
-        <div className="leading">
+        <div className="leading-icon">
           <AddIcon
             id="adding-button"
             anchorEl={addingEl}

@@ -1,7 +1,7 @@
 {
   "name": "yam_taktak_web",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.2",
   "type": "module",
   "homepage": "https://a1000rhan.github.io/yam_taktak_web",
   "scripts": {
@@ -24,6 +24,10 @@
     "@mui/material": "^6.1.7",
     "@mui/system": "^6.1.7",
     "@mui/x-date-pickers": "^7.22.2",
+    "@react-spring/three": "^9.7.5",
+    "@react-spring/web": "^9.7.5",
+    "@react-three/fiber": "^8.17.10",
+    "@stitches/react": "^1.2.8",
     "apexcharts": "^3.53.0",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
@@ -58,6 +62,7 @@
     "sassy-datepicker": "^0.10.2",
     "styled-components": "^6.1.13",
     "sweetalert2": "^11.6.13",
+    "three": "^0.171.0",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -72,6 +77,7 @@
     "eslint-plugin-react-refresh": "^0.4.14",
     "globals": "^15.12.0",
     "react-dom": "^18.3.1",
+    "sass-embedded": "^1.83.0",
     "tailwindcss": "^3.4.15",
     "vite": "^5.4.11"
   }

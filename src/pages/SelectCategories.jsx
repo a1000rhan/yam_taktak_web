@@ -14,6 +14,7 @@ import Button from "../components/Button";
 import categoryAPI from "../api/Category";
 import { Card, Skeleton, Typography } from "@mui/material";
 import gameAPI from "../api/Game";
+import Balls from "../components/Balls";
 
 const SelectCategories = () => {
   const ref = useRef(null);
@@ -155,7 +156,8 @@ const SelectCategories = () => {
           <div className="top-logo">
             <img src={wholeLogo} alt="logo" />
           </div>
-          <div className="half-ring orange-gradient">
+          <div className="hero-section orange-gradient">
+            <Balls />
             <img src={red} alt="red" className="red-circle" />
             <img src={blue} alt="blue" className="blue-circle" />
             <h1 className="ex-lar-title">إنشاء لعبة</h1>

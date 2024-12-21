@@ -109,10 +109,17 @@ body {
   font-family: "Cairo-Bold";
 }
 .leading {
+  /* position: absolute; */
   /*center the content on a basis line */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.leading-icon {
+  position: absolute;
+  margin-right: 10px;
+  left: 80%;
+  margin-bottom: 20px;
 }
 .user-icon {
   margin-right: 10px;
