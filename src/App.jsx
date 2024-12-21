@@ -15,7 +15,7 @@ import GameHistory from "./pages/GameHistory";
 import AddQuestions from "./pages/AddQuestions";
 import AddCategory from "./pages/AddCategory";
 import ShowAllQuestions from "./pages/ShowAllQuestions";
-import Words from "./components/words";
+import Words from "./components/Words";
 
 function App() {
   const [orientation, setOrientation] = useState("");
