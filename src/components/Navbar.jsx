@@ -5,10 +5,8 @@ import "./Nav.css";
 import logo from "../assets/logo.svg";
 import authAPI from "../api/Auth";
 import { observer } from "mobx-react";
-import Person2RoundedIcon from "@mui/icons-material/Person2Rounded";
-import AddIcon from "@mui/icons-material/Add";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
+import { Person2Rounded, Add } from "@mui/icons-material";
+import { Fab, MenuItem, Menu } from "@mui/material";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -92,7 +90,19 @@ const Navbar = () => {
       </ul>
       {isAdmin ? (
         <div className="leading-icon">
-          <AddIcon
+          <Fab
+            id="adding-button"
+            anchorEl={addingEl}
+            onClick={addingMenu}
+            sx={{ fontSize: 32 }}
+            className="btn-circle"
+            color="primary"
+            aria-label="add"
+          >
+            <Add open={adding} onClose={handleAddingClose} />
+          </Fab>
+
+          {/* <AddIcon
             id="adding-button"
             anchorEl={addingEl}
             onClick={addingMenu}
@@ -101,25 +111,27 @@ const Navbar = () => {
             aria-expanded={adding ? "true" : undefined}
             sx={{ fontSize: 32 }}
             className="btn-circle"
-          />
-          <Menu
-            id="adding-menu"
-            open={adding}
-            onClose={handleAddingClose}
-            MenuListProps={{
-              "aria-labelledby": "adding-button",
-            }}
-          >
-            <MenuItem onClick={() => navigate("/add-questions")}>
-              adding question
-            </MenuItem>
-            <MenuItem onClick={() => navigate("/add-category")}>
-              adding category
-            </MenuItem>
-            <MenuItem onClick={() => navigate("/all-questions")}>
-              show all questions
-            </MenuItem>
-          </Menu>
+          /> */}
+          <div className="adding-menu">
+            <Menu
+              id="adding-menu"
+              open={adding}
+              onClose={handleAddingClose}
+              MenuListProps={{
+                "aria-labelledby": "adding-button",
+              }}
+            >
+              <MenuItem onClick={() => navigate("/add-questions")}>
+                adding question
+              </MenuItem>
+              <MenuItem onClick={() => navigate("/add-category")}>
+                adding category
+              </MenuItem>
+              <MenuItem onClick={() => navigate("/all-questions")}>
+                show all questions
+              </MenuItem>
+            </Menu>
+          </div>
         </div>
       ) : (
         <></>
@@ -155,7 +167,7 @@ const Navbar = () => {
             >
               <MenuItem onClick={handleSignOut}>تسجيل خروج</MenuItem>
             </Menu>
-            <Person2RoundedIcon sx={{ fontSize: 32 }} className="user-icon" />
+            <Person2Rounded sx={{ fontSize: 32 }} className="user-icon" />
           </>
         )}
       </div>

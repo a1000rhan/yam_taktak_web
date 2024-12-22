@@ -69,15 +69,18 @@
   display: flex;
   position: absolute;
   top: 140px;
-
-  right: 50%;
+  right: 30%;
   bottom: 0;
   z-index: 10;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 50%;
   height: 30px;
   background-color: transparent;
+}
+.big-logo {
+  width: 100%;
+  /* margin-top: 20px; */
 }
 .logo-section {
   display: flex;
@@ -226,6 +229,11 @@
   margin: 64px;
 }
 
+@media screen and (max-width: 700px) {
+  .top-logo {
+    right: 30%;
+  }
+}
 /* Animation for up and down movement */
 @keyframes moveUpDown {
   0% {

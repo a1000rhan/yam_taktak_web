@@ -116,10 +116,17 @@ body {
   align-items: center;
 }
 .leading-icon {
-  position: absolute;
+  /* position: absolute; */
   margin-right: 10px;
   left: 80%;
   margin-bottom: 20px;
+}
+.adding-menu {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .user-icon {
   margin-right: 10px;

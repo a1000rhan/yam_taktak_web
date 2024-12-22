@@ -154,7 +154,7 @@ const SelectCategories = () => {
       return (
         <div className="start-game">
           <div className="top-logo">
-            <img src={wholeLogo} alt="logo" />
+            <img className="big-logo" src={wholeLogo} alt="logo" />
           </div>
           <div className="hero-section orange-gradient">
             <Balls />
