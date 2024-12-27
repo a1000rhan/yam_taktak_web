@@ -97,7 +97,6 @@
   margin-top: 20px;
   font-size: 20px;
   line-height: 1.75rem;
-
   font-family: "Cairo-Bold";
   color: var(--header-text-color);
 }
@@ -110,7 +109,6 @@
   padding-right: 1.5rem;
   max-width: 13rem;
   width: 100%;
-
   white-space: nowrap;
   border-radius: 9999px;
   padding: 0.5rem 1rem;
@@ -195,7 +193,6 @@
   background-color: #fff;
   margin: 56px;
   margin-left: 120px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,6 +229,15 @@
 @media screen and (max-width: 700px) {
   .top-logo {
     right: 30%;
+    width: 30%;
+  }
+  .start-game {
+    height: 80vh;
+    width: 57%;
+  }
+  .hero-section {
+    height: 30vh;
+    width: 100%;
   }
 }
 /* Animation for up and down movement */

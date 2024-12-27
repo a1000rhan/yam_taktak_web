@@ -7,6 +7,7 @@ import authAPI from "../api/Auth";
 import { observer } from "mobx-react";
 import { Person2Rounded, Add } from "@mui/icons-material";
 import { Fab, MenuItem, Menu } from "@mui/material";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -90,47 +91,23 @@ const Navbar = () => {
       </ul>
       {isAdmin ? (
         <div className="leading-icon">
-          <Fab
-            id="adding-button"
-            anchorEl={addingEl}
-            onClick={addingMenu}
-            sx={{ fontSize: 32 }}
-            className="btn-circle"
-            color="primary"
-            aria-label="add"
-          >
-            <Add open={adding} onClose={handleAddingClose} />
-          </Fab>
-
-          {/* <AddIcon
-            id="adding-button"
-            anchorEl={addingEl}
-            onClick={addingMenu}
-            aria-controls={adding ? "adding-menu" : undefined}
-            aria-haspopup="true"
-            aria-expanded={adding ? "true" : undefined}
-            sx={{ fontSize: 32 }}
-            className="btn-circle"
-          /> */}
           <div className="adding-menu">
-            <Menu
-              id="adding-menu"
-              open={adding}
-              onClose={handleAddingClose}
-              MenuListProps={{
-                "aria-labelledby": "adding-button",
-              }}
-            >
-              <MenuItem onClick={() => navigate("/add-questions")}>
-                adding question
-              </MenuItem>
-              <MenuItem onClick={() => navigate("/add-category")}>
-                adding category
-              </MenuItem>
-              <MenuItem onClick={() => navigate("/all-questions")}>
-                show all questions
-              </MenuItem>
-            </Menu>
+            <Dropdown>
+              <Dropdown.Toggle variant="success" id="dropdown-basic">
+                <Add open={adding} onClose={handleAddingClose} />
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={() => navigate("/add-questions")}>
+                  Adding question
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => navigate("/add-category")}>
+                  Adding category
+                </Dropdown.Item>
+                <Dropdown.Item onClick={() => navigate("/all-questions")}>
+                  Show all questions
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </div>
         </div>
       ) : (
