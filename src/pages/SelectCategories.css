@@ -41,10 +41,10 @@
 }
 
 .yellow-circle {
-  position: absolute;
+  /* position: absolute; */
   z-index: -1;
   width: 80%;
-  display: flex;
+  /* display: flex; */
   overflow: hidden;
   top: 200px;
 }
@@ -231,12 +231,28 @@
     right: 30%;
     width: 30%;
   }
+  .big-logo {
+    width: 160%;
+
+    /* margin-top: 20px; */
+  }
+  .red-circle {
+    width: 20%;
+  }
+  .blue-circle {
+    width: 40%;
+  }
+  .yellow-circle {
+    top: 499px;
+    width: 40%;
+  }
   .start-game {
     height: 80vh;
-    width: 57%;
+    overflow: hidden;
+    /* width: 57%; */
   }
   .hero-section {
-    height: 30vh;
+    height: 80vh;
     width: 100%;
   }
 }
