@@ -89,22 +89,23 @@ const Navbar = () => {
           </li>
         </Link>
       </ul>
+      <h1>{import.meta.env.REACT_APP_STRIPE_KEY}</h1>
       {isAdmin ? (
         <div className="leading-icon">
           <div className="adding-menu">
             <Dropdown>
-              <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <Dropdown.Toggle variant="error" id="dropdown-basic">
                 <Add open={adding} onClose={handleAddingClose} />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 <Dropdown.Item onClick={() => navigate("/add-questions")}>
-                  Adding question
+                  إضافة سؤال
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => navigate("/add-category")}>
-                  Adding category
+                  إضافة فئة
                 </Dropdown.Item>
                 <Dropdown.Item onClick={() => navigate("/all-questions")}>
-                  Show all questions
+                  عرض الأسئلة
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

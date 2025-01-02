@@ -9,10 +9,11 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start:dev": "npm run dev",
-    "start": "npm run start:dev",
-    "build:prod": "vite build",
-    "build:dev": "env-cmd -f .env.dev start:dev build"
+    "start:dev": "vite --mode development",
+    "start:prod": "vite --mode production",
+    "start": "npm run start:prod",
+    "build:dev": "vite build --mode development",
+    "build:prod": "vite build --mode production"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -34,9 +35,9 @@
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
     "dotenv": "^16.4.7",
-    "i18next": "^23.16.5",
+    "i18next": "^23.16.8",
     "i18next-browser-languagedetector": "^8.0.0",
-    "i18next-http-backend": "^2.6.2",
+    "i18next-http-backend": "^2.7.1",
     "install": "^0.13.0",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
