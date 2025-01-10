@@ -20,8 +20,10 @@ const SelectCategories = () => {
   const ref = useRef(null);
 
   const navigator = useNavigate();
-  const [selected, setSelected] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [teamNameA, setTeamNameA] = useState("");
+  const [teamNameB, setTeamNameB] = useState("");
   const [game, setGame] = useState({
     gameName: "",
     teamNumber: 2,
@@ -44,54 +46,71 @@ const SelectCategories = () => {
     setIsLoading(false);
   };
 
-  const clickToScroll = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const addToCategoryList = (category) => {
-    let newSelected;
-
-    if (selected.includes(category)) {
-      newSelected = selected.filter((cat) => cat !== category);
-    } else {
-      newSelected = [...selected, category];
-    }
-
-    setSelected(newSelected);
-    console.log("🚀 ~ addToCategoryList ~ newSelected:", newSelected);
-  };
   const categoriesList = categoryAPI.categories;
 
   const categories = categoriesList.map((cat) => (
     <div
       key={cat._id} // Assuming each category has a unique id
-      onClick={() => addToCategoryList(cat)}
       style={{
-        border: selected.includes(cat) ? "2px solid #3093e8" : "none",
+        border: selectedCategories.includes(cat) ? "2px solid #3093e8" : "none",
         borderRadius: "10px",
+        padding: "10px",
       }}
+      onClick={() => addToCategoryList(cat)}
     >
       <OneCategory category={cat} />
     </div>
   ));
 
+  const addToCategoryList = (categoryId) => {
+    console.log("🚀 ~ addToCategoryList ~ categoryId:", categoryId._id);
+    const index = selectedCategories.findIndex(
+      (cat) => cat._id === categoryId._id
+    );
+    if (index === -1) {
+      setSelectedCategories([...selectedCategories, categoryId]);
+    } else {
+      const newCategories = selectedCategories.filter(
+        (cat) => cat._id !== categoryId._id
+      );
+      setSelectedCategories(newCategories);
+    }
+    setGame({ ...game, categories: selectedCategories });
+  };
+
+  useEffect(() => {
+    setGame({ ...game, categories: selectedCategories });
+  }, [selectedCategories]);
+
+  const clickToScroll = () => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleOnChange = (e) => {
+    setGame({
+      ...game,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleTeamsChange = (text) => {
+    if (text.target.name === "teamNameA") {
+      setTeamNameA(text.target.value);
+    } else {
+      setTeamNameB(text.target.value);
+    }
+    const teamsName = [teamNameA, teamNameB];
+    setGame({ ...game, teamsName: teamsName });
+  };
+
   const createGame = async (e) => {
     e.preventDefault();
 
-    // Get the selected category IDs
-    const CategoriesIds = selected.map((cat) => cat._id);
+    // await gameAPI.createGame(game, navigator);
 
-    // Update the game state using the updater function
-    setGame((prevGame) => {
-      const updatedGame = { ...prevGame, categories: CategoriesIds };
-      console.log("🚀 ~ createGame ~ updatedGame", updatedGame);
-
-      // You can perform the API call here after ensuring state is updated
-      // await gameAPI.createGame(updatedGame);
-
-      return updatedGame;
-    });
+    await gameAPI.createGame(game, navigator);
   };
+
   {
     if (isLoading)
       return (
@@ -206,15 +225,24 @@ const SelectCategories = () => {
           </div>
           <div>
             <h1 className="big-title">حدد معلومات الفرق</h1>
-            <input placeholder="أسم اللعبة" className="text-field" />
+            <input
+              placeholder="أسم اللعبة"
+              name="gameName"
+              className="text-field"
+              onChange={handleOnChange}
+            />
             <div className="btn-row">
               <input
                 placeholder="اسم الفريق A"
+                name="teamNameA"
                 className="text-field width-40"
+                onChange={handleTeamsChange}
               />
               <input
                 placeholder="اسم الفريق B"
+                name="teamNameB"
                 className="text-field width-40"
+                onChange={handleTeamsChange}
               />
             </div>
           </div>

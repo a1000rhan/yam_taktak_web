@@ -24,6 +24,20 @@ class QuestionsAPI {
       );
     }
   };
+
+  getQuestion = async (questionId) => {
+    this.loading = true;
+    try {
+      const resp = await API.get(`/questions/${questionId}`);
+      this.question = resp.data;
+      this.loading = false;
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: Questions.jsx ~ line 11 ~ QuestionsAPI ~ getQuestions= ~ error",
+        error
+      );
+    }
+  };
   addQuestion = async (question, Swal, navigate, setIsLoading) => {
     try {
       const formData = new FormData();

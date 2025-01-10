@@ -16,6 +16,7 @@ import AddQuestions from "./pages/AddQuestions";
 import AddCategory from "./pages/AddCategory";
 import ShowAllQuestions from "./pages/ShowAllQuestions";
 import Words from "./components/Words";
+import ShowOneQuestion from "./pages/ShowOneQuestion";
 
 function App() {
   const [orientation, setOrientation] = useState("");
@@ -40,9 +41,8 @@ function App() {
   return (
     <>
       <div className="bk">
-        <header>
-          <NavBar />
-        </header>
+        <NavBar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -54,12 +54,15 @@ function App() {
           <Route path="/add-questions" element={<AddQuestions />} />
           <Route path="/add-category" element={<AddCategory />} />
           <Route path="/all-questions" element={<ShowAllQuestions />} />
+          <Route
+            path="/show-question/:questionId"
+            element={<ShowOneQuestion />}
+          />
 
           <Route path="/words" element={<Words />} />
         </Routes>
-        <footer>
-          <BottomBar />
-        </footer>
+
+        <BottomBar />
       </div>
     </>
   );

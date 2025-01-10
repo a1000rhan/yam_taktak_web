@@ -8,7 +8,7 @@ import "./BottomBar.css";
 
 const BottomBar = () => {
   return (
-    <div className="bottom-bar">
+    <footer className="bottom-bar">
       <div className="logos">
         <img src={apple} alt="logo" className="logo" />
         <img src={android} alt="logo" className="logo" />
@@ -21,7 +21,7 @@ const BottomBar = () => {
           <img src={Tiktok} alt="tiktock" className="tiktock" />
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -14,6 +14,7 @@ class CategoryAPI {
   getCategories = async () => {
     this.loading = true;
     try {
+      if (this.categories.length != []) return;
       const resp = await API.get("/category");
       this.categories = resp.data;
       this.loading = false;

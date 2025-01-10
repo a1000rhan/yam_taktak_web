@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: -46px 0 0 0;
   gap: 1rem;
 }
 .hero-section {
@@ -33,11 +34,11 @@
 
 .red-circle {
   position: absolute;
-  z-index: -1;
+
   width: 25%;
   margin: 0;
   display: flex;
-  top: 10px;
+  top: 120px;
 }
 
 .yellow-circle {
@@ -67,9 +68,9 @@
 }
 .top-logo {
   display: flex;
-  position: absolute;
+  position: relative;
   top: 140px;
-  right: 30%;
+
   bottom: 0;
   z-index: 10;
   justify-content: center;
@@ -214,11 +215,15 @@
 .categories {
   display: flex;
   align-items: center;
-  gap: 1rem;
+
+  /*horizontal scroll */
+
   flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
   width: 80%;
 }
+
 .big-title {
   font-size: 3.5rem;
   font-weight: 900;
@@ -228,8 +233,9 @@
 
 @media screen and (max-width: 700px) {
   .top-logo {
-    right: 30%;
-    width: 30%;
+    /* right: 30%; */
+
+    width: 100%;
   }
   .big-logo {
     width: 160%;
