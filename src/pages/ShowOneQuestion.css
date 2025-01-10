@@ -1,0 +1,11 @@
+.question-image {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  background-size: cover;
+  border-radius: 16px 16px 0 0;
+  display: block;
+  position: relative;
+}

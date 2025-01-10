@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import questionsAPI from "../api/Questions";
+import "./ShowOneQuestion.css";
 
 const ShowOneQuestion = () => {
   const { questionId } = useParams();
@@ -18,7 +19,14 @@ const ShowOneQuestion = () => {
     setQuestion(questionsAPI.question);
   }, []);
 
-  return isLoading ? <p>isLoading</p> : <div>{question.question}</div>;
+  return isLoading ? (
+    <p>isLoading</p>
+  ) : (
+    <>
+      <div>{question.question}</div>
+      <img className="question-image" src={question.questionImage} />
+    </>
+  );
 };
 
 export default ShowOneQuestion;
