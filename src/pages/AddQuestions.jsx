@@ -104,7 +104,6 @@ const AddQuestions = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("🚀 ~ handleSubmit ~ authAPI.user:", authAPI.user["_id"]);
     setQuestion({
       ...question,
       profile: authAPI.user["_id"] ?? "",
